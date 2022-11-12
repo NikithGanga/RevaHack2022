@@ -26,8 +26,8 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 const infuraKey = "1b7002d98a55406c9eec857239e254d6"
 
 const fs = require("fs")
-const mnemonic = fs.readFileSync(".secret").toString().trim()
-
+// const mnemonic = fs.readFileSync(".secret").toString().trim()
+const mnemonic = 'drip trust laptop autumn tag initial enrich solve human jazz expand either'
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -47,16 +47,16 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    development: {
-     host: "127.0.0.1",     // Localhost (default: none)
+    test: {
+     host: "localhost",     // Localhost (default: none)
      port: 7545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
-    ganache: {
-      host: "127.0.0.1",
-      port: 7545,
-      network_id: 5777,
-    },
+    // ganache: {
+    //   host: "localhost",
+    //   port: 7545,
+    //   network_id: "*",
+    // },
     //
     // An additional network, but with some advanced options…
     // advanced: {
@@ -72,6 +72,7 @@ module.exports = {
     // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
     goerli: {
       provider: new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraKey}`),
+      from: "0x8149F02F2d3F62940B2942312e44a7F403c46e10",
       network_id: 5,       // Goerli's network id
       chain_id: 5,         // Goerli's chain id
       gas: 5500000,        // Gas limit used for deploys.
