@@ -39,8 +39,13 @@ From there, follow the instructions on the hosted React app. It will walk you th
 
   This Box is a sweet combo of [Truffle](https://trufflesuite.com) and [Create React App](https://create-react-app.dev). Either one would be a great place to start!
 <<<<<<< HEAD
+<<<<<<< HEAD
+ 
+ this i srev! example(hi!!)
+=======
 
   Shubham's example
+>>>>>>> ee8950aeb40a84005226cc653986820f89a9581d
 =======
   Nikith is here....
 >>>>>>> 4bb90cb23288af5299d4531428133642d62da5ae
