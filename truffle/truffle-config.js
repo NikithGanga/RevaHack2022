@@ -22,7 +22,11 @@
 // const mnemonic = process.env["MNEMONIC"];
 // const infuraProjectId = process.env["INFURA_PROJECT_ID"];
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const infuraKey = "1b7002d98a55406c9eec857239e254d6"
+
+const fs = require("fs")
+const mnemonic = fs.readFileSync(".secret").toString().trim()
 
 module.exports = {
   /**
@@ -43,10 +47,15 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    development: {
-     host: "127.0.0.1",     // Localhost (default: none)
-     port: 7545,            // Standard Ethereum port (default: none)
-     network_id: "*",       // Any network (default: none)
+    // development: {
+    //  host: "127.0.0.1",     // Localhost (default: none)
+    //  port: 7545,            // Standard Ethereum port (default: none)
+    //  network_id: "*",       // Any network (default: none)
+    // },
+    ganache: {
+      host: "localhost",
+      port: 7545,
+      network_id: "*",
     },
     //
     // An additional network, but with some advanced options…
@@ -61,10 +70,10 @@ module.exports = {
     //
     // Useful for deploying to a public network.
     // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
-    goerli: {
-      provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraProjectId}`),
+    ropsten: {
+      provider: new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/${infuraKey}`),
       network_id: '*',       // Goerli's network id
-      chain_id: 1337,         // Goerli's chain id
+      // chain_id: 5,         // Goerli's chain id
       gas: 5500000,        // Gas limit used for deploys.
       confirmations: 2,    // # of confirmations to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
@@ -80,9 +89,9 @@ module.exports = {
   },
 
   // Set default mocha options here, use special reporters, etc.
-  mocha: {
-    // timeout: 100000
-  },
+  // mocha: {
+  //   // timeout: 100000
+  // },
 
   // Configure your compilers
   compilers: {
