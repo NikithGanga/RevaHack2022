@@ -2,10 +2,10 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 /**
-* @title cloud
+* @title MyToken
 * @author Mavericks
 */
-contract cloud {
+contract MyToken {
  
     address owner;
   
