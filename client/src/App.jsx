@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { DatePicker, Button } from 'antd';
 import { Router, Route } from "react-router-dom";
 import Home from './components/home';
-import 'antd/dist/antd.css';
+import '~antd/dist/antd.css';
 import history from "./history";
 import { message } from 'antd';
 import { Spin, Alert } from 'antd';
